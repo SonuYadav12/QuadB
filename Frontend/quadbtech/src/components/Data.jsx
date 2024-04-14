@@ -5,7 +5,7 @@ function Data() {
 
   useEffect(() => {
     fetch(
-      "http://localhost:3000/api/top10tickers"
+      "https://quadb-tech-nodejs-assignment-backend-sigma.vercel.app/api/dbtickers"
     )
       .then((response) => response.json())
       .then((data) => {
