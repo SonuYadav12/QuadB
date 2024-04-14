@@ -5,7 +5,7 @@ function Data() {
 
   useEffect(() => {
     fetch(
-      "https://quadbtech-nodejs-assignment-backend.onrender.com/api/dbtickers"
+      "http://localhost:3000/api/dbtickers"
     )
       .then((response) => response.json())
       .then((data) => {
