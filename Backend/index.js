@@ -77,31 +77,31 @@ const deleteFromMongo=async()=>{
 }
 
 
-const save=async()=>{
-  try{
-      const tickers=await fetchTickers();
-      if(!tickers){
-        res.status(404).json({message:'Data not found'})
+const save = async () => {
+    try {
+      const tickers = await fetchTickers();
+      if (!tickers) {
+        res.status(404).json({ message: 'Data not found' });
         return;
       }
-      const tickerArray=Object.entries(tickers).map(([symbol,data])=>({
-        name:data.name,
+      const tickerArray = Object.entries(tickers).map(([symbol, data]) => ({
+        name: data.name,
         last: parseFloat(data.last),
         buy: parseFloat(data.buy),
         sell: parseFloat(data.sell),
         volume: parseFloat(data.volume),
-        base_unit:data.base_unit,
+        base_unit: data.base_unit,
       }));
-      tickerArray.sort((a,b)=>b.last-a.last);
-      const top10=tickerArray.slice(0,10);
+      tickerArray.sort((a, b) => b.last - a.last);
+      const top10 = tickerArray.slice(0, 10); 
       await deleteFromMongo();
       await saveToMongo(top10);
       return top10;
-  }catch(err){
-    console.log(err);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-};
+    } catch (err) {
+      console.log(err);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  };
 
 app.get('/api/top10tickers', async (req, res) => {
   try {

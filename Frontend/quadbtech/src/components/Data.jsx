@@ -5,7 +5,7 @@ function Data() {
 
   useEffect(() => {
     fetch(
-      "http://localhost:3000/api/dbtickers"
+      "http://localhost:3000/api/top10tickers"
     )
       .then((response) => response.json())
       .then((data) => {
