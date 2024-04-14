@@ -75,9 +75,6 @@ const deleteFromMongo=async()=>{
     console.log(err);
   }
 }
-app.use('/test', (req, res) => {
-    res.send('This is a test route!');
-  });
 
 const save = async () => {
     try {
