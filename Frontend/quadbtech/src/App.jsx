@@ -15,7 +15,7 @@ function App() {
         <hr className="w-full mb-4 border-gray-600" />
         <div className="w-full flex justify-between ">
           <p className="mb-2 font-bold text-white">Copyright © 2019 HodlInfo.com</p>
-          <a href="/support" className="underline  no-underline text-white font-bold">Support</a>
+          <a href="/support" className="no-underline text-white font-bold">Support</a>
         </div>
         <hr className="w-full mb-4 border-gray-600" />
         <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4">
